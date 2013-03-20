@@ -1,4 +1,4 @@
-# caarlos0 also does dotfiles
+# nerde, just like caarlos0, also does dotfiles
 
 ## dotfiles
 
