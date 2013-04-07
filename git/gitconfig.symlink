@@ -5,8 +5,8 @@
 [hub]
         protocol = https
 [user]
-        name = Carlos Alexandro Becker
-        email = caarlos0@gmail.com
+        name = Diego Aguir Selzlein
+        email = diegoselzlein@gmail.com
 [credential]
         helper = cache --timeout=3600000
 [alias]
