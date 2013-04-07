@@ -17,7 +17,7 @@ I also removed a lot of thing I dont use, tunned other, well, I messed up everyt
 Run this:
 
 ```sh
-git clone https://github.com/caarlos0/dotfiles.git ~/.dotfiles
+git clone https://github.com/nerde/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
