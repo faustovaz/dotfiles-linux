@@ -4,10 +4,13 @@
 sudo apt-get update && sudo apt-get install build-essential zlib1g-dev libreadline-dev libssl-dev libmagickwand-dev libmysqlclient-dev vim make -y
 
 ## RBENV
-. ~/.dotfiles/script/rbenv.sh
+. ~/.dotfiles/install/rbenv.sh
 
 ## LINKS TO SHARED FOLDER
-. ~/.dotfiles/script/shared.sh
+. ~/.dotfiles/install/shared.sh
+
+## LINKS TO SHARED FOLDER
+. ~/.dotfiles/install/zsh.sh
 
 # Run the install (I'd like to pull this out of rake, eventually)
 gem install rake
