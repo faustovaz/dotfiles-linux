@@ -1,4 +1,4 @@
-# nerde, just like caarlos0, also does dotfiles
+# My dotfiles
 
 ## dotfiles
 
@@ -12,7 +12,16 @@ neither other executables exclusive for that OS, so, I tweaked it to work in a s
 I also removed a lot of thing I dont use, tunned other, well, I messed up everything.
 
 
-## install
+## Installing
+
+Configure the shared partition in /etc/fstab:
+
+```
+/dev/sda6 /media/shared   ext4    rw,user        0       2
+```
+sudo mkdir /media/shared
+sudo mount -a
+sudo chown nerde:nerde /media/shared
 
 Run this:
 

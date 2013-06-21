@@ -36,7 +36,6 @@ if [ -e "${HOME}/.customenv" ]; then
   source ${HOME}/.customenv
 fi
 
-source /home/nerde/.rvm/scripts/rvm
 JAVA_HOME=/opt/jdk1.7.0_15
 export PATH="$JAVA_HOME/bin:$PATH"
 
