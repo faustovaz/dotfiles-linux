@@ -19,13 +19,14 @@ Configure the shared partition in /etc/fstab:
 ```
 /dev/sda6 /media/shared   ext4    rw,user        0       2
 ```
-sudo mkdir /media/shared
-sudo mount -a
-sudo chown nerde:nerde /media/shared
 
 Run this:
 
 ```sh
+sudo mkdir /media/shared
+sudo mount -a
+sudo chown nerde:nerde /media/shared
+
 git clone https://github.com/nerde/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
