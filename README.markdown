@@ -17,7 +17,7 @@ I also removed a lot of thing I dont use, tunned other, well, I messed up everyt
 Configure the shared partition in /etc/fstab:
 
 ```
-/dev/sda6 /media/shared   ext4    rw,user        0       2
+/dev/sda6 /media/shared   ext4    rw,user,exec        0       2
 ```
 
 Run this:
