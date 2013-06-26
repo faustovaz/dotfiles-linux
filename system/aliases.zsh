@@ -18,3 +18,5 @@ alias sigaa='cd ~/svn/SIG/SIGAA'
 alias sipac='cd ~/svn/SIG/SIPAC'
 alias sigrh='cd ~/svn/SIG/SIGRH'
 
+alias grep='grep --color=auto'
+
