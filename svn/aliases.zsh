@@ -5,6 +5,12 @@ alias scm='svn commit -m'
 alias sme='svn merge'
 alias sdf='svn diff | vim -'
 
+# To see conflicts
+scon() {
+  svn stat | grep -P '^(?=.{0,6}C)'
+  svs | grep conflict --color=never
+}
+
 svs() {
   svn stat | grep -v "classpath" | grep -v "/bin" | grep -v ".settings" | grep -v ".project" | grep -v "target"
 }
