@@ -15,3 +15,7 @@ svs() {
   svn stat | grep -v "classpath" | grep -v "/bin" | grep -v ".settings" | grep -v ".project" | grep -v "target"
 }
 
+sres() {
+  vimdiff $1.merge-left* $1 $1.merge-right*
+}
+
