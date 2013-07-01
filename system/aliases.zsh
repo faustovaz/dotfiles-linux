@@ -20,3 +20,5 @@ alias sigrh='cd ~/svn/SIG/SIGRH'
 
 alias grep='grep --color=auto'
 
+alias duf='du -sh * | sort -hr'
+
