@@ -27,7 +27,7 @@ sudo mkdir /media/shared
 sudo mount -a
 sudo chown nerde:nerde /media/shared
 
-git clone https://github.com/nerde/dotfiles.git ~/.dotfiles
+git clone git@github.com:nerde/dotfiles-linux.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
