@@ -3,14 +3,11 @@
 echo "configuring sublime-text-2..."
 set -x
 
+ZSH='~/.dotfiles'
 # symlink settings in
 sublime_dir=$HOME/.config/sublime-text-2/Packages
 mv "$sublime_dir/User" "$sublime_dir/User.backup"
 ln -s "$ZSH/sublime2/User" "$sublime_dir"
-
-# Grab the Soda theme
-cd "$sublime_dir"
-git clone https://github.com/buymeasoda/soda-theme/ "Theme - Soda"
 
 # Grab the Sublime Package Control
 rm -rf "$HOME/.config/sublime-text-2/Installed Packages/Package Control.sublime-package"
@@ -20,6 +17,6 @@ wget -P $HOME/.config/sublime-text-2/Installed\ Packages/ http://sublime.wbond.n
 packs=$ZSH/sublime2/Packages
 
 for f in $(ls $packs/); do
-  rm -rf $sublime_dir/$f
-  ln -s $packs/$f $sublime_dir/$f
+  rm -rf "$sublime_dir/$f"
+  ln -s "$packs/$f" "$sublime_dir/$f"
 done
