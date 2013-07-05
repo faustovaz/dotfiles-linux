@@ -18,6 +18,8 @@ Configure the shared partition in /etc/fstab:
 
 ```
 /dev/sda6 /media/shared   ext4    rw,user,exec,x-gvfs-name=Shared        0       2
+# NTFS
+UUID=7B83E6900F53C1C3   /media/nerde/7B83E6900F53C1C3   ntfs    defaults,nosuid,nodev,uhelper=udisks2,uid=1000,gid=1000,dmask=0077,fmask=0177   0       0
 ```
 
 Run this:
