@@ -1,0 +1,23 @@
+#!/bin/bash
+
+defaults=$HOME/.local/share/applications/defaults.list
+sublime=$HOME/.local/share/applications/sublime2.desktop
+
+entry=`grep sublime $defaults 2>/dev/null`
+
+if [[ "$entry" == "" ]]; then
+  echo [Default Applications] >> $defaults
+  echo text/plain=sublime2.desktop >> $defaults
+fi
+
+if [[ ! -e $sublime ]]; then
+  echo "[Desktop Entry]" >> $sublime
+  echo "Version=1.0" >> $sublime
+  echo "Type=Application" >> $sublime
+  echo "Name=Sublime 2" >> $sublime
+  echo "Exec=subl" >> $sublime
+  echo "Terminal=false" >> $sublime
+  echo "Categories=Accessories" >> $sublime
+  echo "StartupNotify=true" >> $sublime
+  echo "MimeType=text/plain;" >> $sublime
+fi
