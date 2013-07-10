@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo apt-get install virtualbox-4.2 -y
+wget -O /tmp/vbox.deb http://download.virtualbox.org/virtualbox/4.2.16/virtualbox-4.2_4.2.16-86992~Ubuntu~raring_amd64.deb
+sudo dpkg -i /tmp/vbox.deb
+
+wget -O /tmp/vagrant.deb http://files.vagrantup.com/packages/95d308caaecd139b8f62e41e7add0ec3f8ae3bd1/vagrant_1.2.3_x86_64.deb
+sudo dpkg -i /tmp/vagrant.deb
+
