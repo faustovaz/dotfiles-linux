@@ -71,7 +71,7 @@
 
 	## Maildir
 	# Path to the maildir to check.
-	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILDIR_INBOX="/home/carlos/.mail/inbox/new"
+	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILDIR_INBOX="/home/nerde/.mail/inbox/new"
 
 	## mbox
 	# Path to the mbox to check.
@@ -79,7 +79,7 @@
 
 	## mailcheck
 	# Optional path to mailcheckrc
-	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILCHECKRC="/home/carlos/.mailcheckrc"
+	export TMUX_POWERLINE_SEG_MAILCOUNT_MAILCHECKRC="/home/nerde/.mailcheckrc"
 # }
 
 # now_playing.sh {
@@ -100,7 +100,7 @@
 	export TMUX_POWERLINE_SEG_NOW_PLAYING_MPD_SIMPLE_FORMAT="%artist% - %title%"
 
 	# Username for Last.fm if that music player is used.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_LASTFM_USERNAME="caarlos00"
+	export TMUX_POWERLINE_SEG_NOW_PLAYING_LASTFM_USERNAME="diegonerde"
 	# How often in seconds to update the data from last.fm.
 	export TMUX_POWERLINE_SEG_NOW_PLAYING_LASTFM_UPDATE_PERIOD="30"
 	# Fancy char to display before now playing track
@@ -131,5 +131,5 @@
 	# 1. Go to Yahoo weather http://weather.yahoo.com/
 	# 2. Find the weather for you location
 	# 3. Copy the last numbers in that URL. e.g. "http://weather.yahoo.com/united-states/california/newport-beach-12796587/" has the numbers "12796587"
-	export TMUX_POWERLINE_SEG_WEATHER_LOCATION="455873"
+	export TMUX_POWERLINE_SEG_WEATHER_LOCATION="455862"
 # }
