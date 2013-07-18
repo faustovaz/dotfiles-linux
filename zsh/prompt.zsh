@@ -7,7 +7,6 @@ git_branch() {
 }
 
 git_dirty() {
-  #st=$(/usr/bin/git status 2>/dev/null | tail -n 1)
   st=$(git status -sb 2>/dev/null | wc -l)
   if [[ $st == "0" ]]
   then
@@ -24,7 +23,6 @@ git_dirty() {
 
 git_prompt_info () {
  ref=$(/usr/bin/git symbolic-ref HEAD 2>/dev/null) || return
-# echo "(%{\e[0;33m%}${ref#refs/heads/}%{\e[0m%})"
  echo "${ref#refs/heads/}"
 }
 
