@@ -8,7 +8,7 @@ git_branch() {
 
 git_dirty() {
   #st=$(/usr/bin/git status 2>/dev/null | tail -n 1)
-  st=$(gs 2>/dev/null | wc -l)
+  st=$(git status -sb 2>/dev/null | wc -l)
   if [[ $st == "0" ]]
   then
     echo ""
