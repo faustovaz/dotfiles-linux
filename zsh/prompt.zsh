@@ -7,12 +7,13 @@ git_branch() {
 }
 
 git_dirty() {
-  st=$(/usr/bin/git status 2>/dev/null | tail -n 1)
-  if [[ $st == "" ]]
+  #st=$(/usr/bin/git status 2>/dev/null | tail -n 1)
+  st=$(gs 2>/dev/null | wc -l)
+  if [[ $st == "0" ]]
   then
     echo ""
   else
-    if [[ $st == nothing\ to\ commit* ]]
+    if [[ $st == "1" ]]
     then
       echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
     else
