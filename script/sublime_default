@@ -12,12 +12,12 @@ fi
 
 if [[ ! -e $sublime ]]; then
   echo "[Desktop Entry]" >> $sublime
-  echo "Version=1.0" >> $sublime
-  echo "Type=Application" >> $sublime
   echo "Name=Sublime 2" >> $sublime
+  echo "GenericName=Sublime Text Editor" >> $sublime
   echo "Exec=subl" >> $sublime
   echo "Terminal=false" >> $sublime
-  echo "Categories=Accessories" >> $sublime
+  echo "Type=Application" >> $sublime
+  echo "Icon=/home/nerde/apps/st2/Icon/256x256/sublime_text.png" >> $sublime
+  echo "Categories=Accessories;" >> $sublime
   echo "StartupNotify=true" >> $sublime
-  echo "MimeType=text/plain;" >> $sublime
 fi
