@@ -1,0 +1,15 @@
+#!/bin/sh
+
+sudo apt-add-repository ppa:versable/elementary-update
+sudo apt-get update
+sudo apt-get install elementary-tweaks -y
+
+## Additional Themes
+# sudo apt-get install elementary-dark-theme elementary-plastico-theme elementary-whit-e-theme elementary-harvey-theme
+
+## Optimized Icon Themes
+# sudo apt-get install elementary-elfaenza-icons elementary-nitrux-icons
+
+## Plank Themes
+# sudo apt-get install elementary-plank-themes
+
