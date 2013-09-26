@@ -1,11 +1,15 @@
 #!/bin/bash
 
-ln -nfs /media/shared/home/Dropbox ~/Dropbox
-ln -nfs /media/shared/home/gh ~/gh
-ln -nfs /media/shared/home/git ~/git
-ln -nfs /media/shared/home/apps ~/apps
+function checklink() {
+  [ -e "/media/shared/home/$1" ] && ln -nfs "/media/shared/home/$1" "$HOME/$1"
+}
 
-if [[ -a /media/shared/home/.localrc ]]
-then
-  ln -nfs /media/shared/home/.localrc ~/.localrc
-fi
+checklink Dropbox
+checklink gh
+checklink git
+checklink apps
+checklink workspace
+checklink .localrc
+checklink android-sdks
+checklink vbox_share
+checklink VirtualBox\ VMs

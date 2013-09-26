@@ -6,10 +6,10 @@ if [[ ! -e $eclipse ]]; then
   echo "[Desktop Entry]" >> $eclipse
   echo "Name=Eclipse" >> $eclipse
   echo "GenericName=Eclipse" >> $eclipse
-  echo "Exec=/home/nerde/apps/eclipse/eclipse" >> $eclipse
+  echo "Exec=$HOME/apps/eclipse/eclipse" >> $eclipse
   echo "Terminal=false" >> $eclipse
   echo "Type=Application" >> $eclipse
-  echo "Icon=/home/nerde/apps/eclipse/icon.xpm" >> $eclipse
+  echo "Icon=$HOME/apps/eclipse/icon.xpm" >> $eclipse
   echo "Categories=Accessories;" >> $eclipse
   echo "StartupNotify=true" >> $eclipse
 fi

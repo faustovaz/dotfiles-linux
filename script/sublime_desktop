@@ -17,7 +17,7 @@ if [[ ! -e $sublime ]]; then
   echo "Exec=subl" >> $sublime
   echo "Terminal=false" >> $sublime
   echo "Type=Application" >> $sublime
-  echo "Icon=/home/nerde/apps/st2/Icon/256x256/sublime_text.png" >> $sublime
+  echo "Icon=$HOME/apps/sublime2/Icon/256x256/sublime_text.png" >> $sublime
   echo "Categories=Accessories;" >> $sublime
   echo "StartupNotify=true" >> $sublime
 fi

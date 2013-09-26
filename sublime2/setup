@@ -18,7 +18,7 @@ packs=$dotdir/sublime2/Packages
 for f in $packs/*; do
   fname=`basename "$f"`
   rm -rf "$sublime_dir/$fname"
-  ln -ns "$f" "$sublime_dir/$fname"
+  cp -r "$f" "$sublime_dir/"
 done
 
 sudo ln -fs $HOME/apps/sublime2/sublime_text /usr/bin/subl
