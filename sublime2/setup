@@ -1,22 +1,24 @@
 #!/bin/bash
 # Setup a machine for Sublime Text 2
-echo "configuring sublime-text-2..."
-set -x
 
-ZSH='~/.dotfiles'
-# symlink settings in
+dotdir="$HOME/.dotfiles"
+
+# Symlink settings in
 sublime_dir=$HOME/.config/sublime-text-2/Packages
 mv "$sublime_dir/User" "$sublime_dir/User.backup"
-ln -ns "$ZSH/sublime2/User" "$sublime_dir"
+ln -ns "$dotdir/sublime2/User" "$sublime_dir"
 
 # Grab the Sublime Package Control
 rm -rf "$HOME/.config/sublime-text-2/Installed Packages/Package Control.sublime-package"
-wget -P $HOME/.config/sublime-text-2/Installed\ Packages/ http://sublime.wbond.net/Package%20Control.sublime-package
+wget --quiet -P $HOME/.config/sublime-text-2/Installed\ Packages/ http://sublime.wbond.net/Package%20Control.sublime-package
 
 # cp more Packages
-packs=$ZSH/sublime2/Packages
+packs=$dotdir/sublime2/Packages
 
-for f in $(ls $packs/); do
-  rm -rf "$sublime_dir/$f"
-  ln -ns "$packs/$f" "$sublime_dir/$f"
+for f in $packs/*; do
+  fname=`basename "$f"`
+  rm -rf "$sublime_dir/$fname"
+  ln -ns "$f" "$sublime_dir/$fname"
 done
+
+sudo ln -fs $HOME/apps/sublime2/sublime_text /usr/bin/subl
