@@ -10,6 +10,7 @@ function checklink() {
 
 checklink Dropbox
 checklink Downloads
+checklink Videos
 checklink Music
 checklink gh
 checklink git
