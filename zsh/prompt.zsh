@@ -33,7 +33,7 @@ unpushed () {
 need_push () {
   if [[ $(unpushed) == "" ]]
   then
-    echo " "
+    echo ""
   else
     echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
   fi
