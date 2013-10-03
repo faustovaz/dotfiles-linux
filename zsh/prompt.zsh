@@ -14,9 +14,9 @@ git_dirty() {
   else
     if [[ $st == "1" ]]
     then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+      echo " [%{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}]"
     else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo " [%{$fg_bold[yellow]%}$(git_prompt_info)%{$reset_color%}]"
     fi
   fi
 }
@@ -35,16 +35,16 @@ need_push () {
   then
     echo ""
   else
-    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
+    echo "[%{$fg_bold[magenta]%}unpushed%{$reset_color%}]"
   fi
 }
 
 rb_prompt(){
   if $(which rbenv &> /dev/null)
   then
-	  echo "%{$fg_bold[yellow]%}$(whoami)%{$reset_color%}"
-	else
-	  echo ""
+    echo "%{$fg_bold[red]%}$(whoami)%{$reset_color%}"
+  else
+    echo ""
   fi
 }
 
@@ -70,14 +70,24 @@ todo(){
 svn_graph(){
 if [ -d .svn ]; then
   echo `svn stat | awk '{ split($0, a, " ")  arr[a[1]]++ }END{ print arr["M"] ? arr["M"] : "0", arr["A"] ? arr["A"] : "0", arr["?"] ? arr["?"] : "0", arr["D"] ? arr["D"] : "0", arr["!"] ? arr["!"] : "0" }' | spark`
-fi 
+fi
 }
 
 directory_name(){
-  echo "%{$fg_bold[cyan]%}$(pwd)/%{$reset_color%}"
+  echo " %{$fg_bold[cyan]%}$(pwd)/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rb_prompt) in $(directory_name) $(git_dirty)$(need_push)\n› '
+# PROMPT_COUNT=0
+prompt() {
+  default=" › "
+  # [[ "$PROMPT_COUNT" == "0" ]] && echo "$(rb_prompt)$(directory_name)$(git_dirty)$(need_push)\n$default" || echo $default
+  # PROMPT_COUNT=$(($PROMPT_COUNT + 1))
+  # [[ "$PROMPT_COUNT" < "5" ]] || PROMPT_COUNT=0
+
+  echo "$(rb_prompt)$(directory_name)$(git_dirty)$(need_push)$default"
+}
+
+export PROMPT=$'$(prompt)'
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}$(todo)%{$reset_color%}"
 }
