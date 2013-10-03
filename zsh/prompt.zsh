@@ -74,7 +74,7 @@ fi
 }
 
 directory_name(){
-  echo " %{$fg_bold[cyan]%}$(pwd)/%{$reset_color%}"
+  echo "%{$fg_bold[cyan]%}$(pwd)/%{$reset_color%}"
 }
 
 # PROMPT_COUNT=0
@@ -84,7 +84,7 @@ prompt() {
   # PROMPT_COUNT=$(($PROMPT_COUNT + 1))
   # [[ "$PROMPT_COUNT" < "5" ]] || PROMPT_COUNT=0
 
-  echo "$(rb_prompt)$(directory_name)$(git_dirty)$(need_push)$default"
+  echo "$(directory_name)$(git_dirty)$(need_push)$default"
 }
 
 export PROMPT=$'$(prompt)'
