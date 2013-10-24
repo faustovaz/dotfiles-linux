@@ -3,7 +3,7 @@
 git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
 reload!
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-RUBYVERSION='1.9.3-p392'
+RUBYVERSION='1.9.3-p448'
 read -p "Ruby Version ($RUBYVERSION) : " input
 if [[ "$input" != "" ]]; then
   RUBYVERSION=$input
