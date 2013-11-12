@@ -1,0 +1,57 @@
+#!/bin/bash
+
+app=$1
+
+RAILS_VERSION=`rails -v | sed 's/^.* //'`
+rails new $app $2
+cd $app
+echo --color >> .rspec
+
+# Check rbenv
+RBENV=`which rbenv`
+if [[ "$RBENV" != *not\ found* ]]; then
+  rubyv=`ruby -v | sed -e 's/ruby\ //' | sed -e 's/\ .*$//' | sed -e 's/p/-p/'`
+  rbenv local $rubyv
+fi
+
+# Gemfile dependencies
+echo >> Gemfile
+if [[ "$RAILS_VERSION" == 4* ]]; then
+  echo "gem 'devise', github: 'plataformatec/devise', branch: 'v3.1.0.rc2'" >> Gemfile
+  echo "gem 'simple_form', '~> 3.0.0.rc'" >> Gemfile
+else
+  echo "gem 'devise'" >> Gemfile
+  echo "gem 'simple_form'" >> Gemfile
+fi
+echo "gem 'twitter-bootstrap-rails'" >> Gemfile
+echo "gem 'inherited_resources'" >> Gemfile
+echo "gem 'cancan'" >> Gemfile
+echo >> Gemfile
+echo group :test do >> Gemfile
+echo "  gem 'rspec-rails'" >> Gemfile
+echo "  gem 'capybara'" >> Gemfile
+echo "  gem 'factory_girl_rails'" >> Gemfile
+echo end >> Gemfile
+sed "s/# gem 'therubyracer'/gem 'therubyracer'/" Gemfile > Gemfile2
+mv Gemfile2 Gemfile # I had to do this, replacing directly in the Gemfile wasn't working
+bundle
+
+# Devise
+rails g devise:install
+rails g devise User
+rails g devise:views
+
+# Bootstrap
+rails g bootstrap:install
+rails g bootstrap:layout application fixed
+
+# SimpleForm
+rails g simple_form:install --bootstrap
+
+# CanCan
+rails g cancan:ability
+
+# Git
+git init .
+git add -A
+git status
