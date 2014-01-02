@@ -16,4 +16,4 @@ reload!
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 install_ruby 1.9.3-p448
-install_ruby 2.0.0-p247
+install_ruby 2.0.0-p353
