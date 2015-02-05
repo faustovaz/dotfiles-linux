@@ -3,22 +3,6 @@
 ## SOME LIBS, VIM AND MAKE
 sudo apt-get update && sudo apt-get install build-essential zlib1g-dev libreadline-dev libssl-dev libmagickwand-dev libmysqlclient-dev vim make libxslt1-dev rar unrar -y
 
-## RBENV
-. ~/.dotfiles/install/rbenv.sh
-
-## LINKS TO SHARED FOLDER
-. ~/.dotfiles/install/shared.sh
-
 ## ZSH
 . ~/.dotfiles/install/zsh.sh
-
-## JAVA 7
-. ~/.dotfiles/install/java.sh
-
-## Mysql Server
-. ~/.dotfiles/install/mysql.sh
-
-# Run the install (I'd like to pull this out of rake, eventually)
-gem install rake
-rake install
 
