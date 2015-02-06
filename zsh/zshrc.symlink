@@ -36,7 +36,7 @@ if [ -e "${HOME}/.customenv" ]; then
   source ${HOME}/.customenv
 fi
 
-JAVA_HOME=/opt/jdk1.7.0_15
-if [ -d "${JAVA_HOME}" ]; then
-  export PATH="$JAVA_HOME/bin:$PATH"
-fi
+# FuncoesZZ
+export ZZDIR=$HOME/.funcoeszz/zz
+alias ZZDIR=$HOME/.funcoeszz/zz
+

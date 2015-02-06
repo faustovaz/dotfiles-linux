@@ -6,3 +6,6 @@ sudo apt-get update && sudo apt-get install build-essential zlib1g-dev libreadli
 ## ZSH
 . ~/.dotfiles/install/zsh.sh
 
+## FUNCOESZZ
+. ~/.dotfiles/install/funcoeszz.sh
+
